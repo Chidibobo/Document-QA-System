@@ -1,0 +1,11 @@
+sentence-transformers
+faiss-cpu
+python-dotenv
+requests  
+docling
+ipykernel
+streamlit>=1.28.0
+transformers
+torch
+accelerate
+huggingface_hub>=0.20.0
