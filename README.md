@@ -67,6 +67,35 @@ streamlit run src/app.py
 
 Open http://localhost:8501 in your browser.
 
+## 🐳 Docker
+
+### Run with Docker Compose (Recommended)
+
+```bash
+# Build and start
+docker-compose up --build
+
+# Run in background
+docker-compose up -d --build
+
+# Stop
+docker-compose down
+```
+
+### Run with Docker
+
+```bash
+# Build the image
+docker build -t document-qa .
+
+# Run the container
+docker run -p 8501:8501 --env-file .env -v $(pwd)/data:/app/data document-qa
+```
+
+Then open http://localhost:8501
+
+> **Note:** Make sure your `.env` file exists with `HUGGING_FACE_TOKEN` before running Docker.
+
 ## 📁 Project Structure
 
 ```
@@ -84,6 +113,9 @@ Document-QA-System/
 │   ├── pdfs/               # Store your PDF files
 │   └── vector_store/       # FAISS index storage
 ├── logs/                   # Application logs
+├── Dockerfile              # Docker image configuration
+├── docker-compose.yml      # Docker Compose configuration
+├── .dockerignore           # Docker build exclusions
 ├── requirements.txt
 ├── .env                    # Your configuration (create this)
 └── README.md
