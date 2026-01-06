@@ -1,0 +1,16 @@
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+.env.example
+*.md
+!README.md
+.vscode
+.idea
+*.log
+notebooks/
+logs/
+data/vector_store/*.bin
+data/vector_store/*.pkl
+.cursor
